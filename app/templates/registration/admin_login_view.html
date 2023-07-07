@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <div class="mt-5 shadow">
+            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Iniciar Sesión</h4>
+                  <form action="" method="post">
+                    {% csrf_token %}
+                    {{form | crispy}}
+    
+                    <input type="submit" value="Login" class="btn btn-primary btn-lg alinear-derecha">
+                    
+                    <a name="crear" id="crear" class="btn btn-primary" href="{%url 'registro'%}" role="button">Crear Cuenta</a>
+
+                </form>
+                 
+                </div>
+              </div>
+
+            
+            
+
+
+        </div>
+        
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+{% endblock  %}

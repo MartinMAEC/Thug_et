@@ -1,0 +1,68 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+
+
+<div id="text-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicadores -->
+  <ol class="carousel-indicators">
+    <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#text-carousel" data-slide-to="1"></li>
+    <li data-target="#text-carousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Slides del carrusel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <h3>Dolar</h3>
+      <p id="dolar"> </p>
+    </div>
+    <div class="carousel-item">
+      <h3>Texto del Slide 2</h3>
+      <p>Contenido del Slide 2</p>
+    </div>
+    <div class="carousel-item">
+      <h3>Texto del Slide 3</h3>
+      <p>Contenido del Slide 3</p>
+    </div>
+  </div>
+
+  <!-- Controles del carrusel -->
+  <a class="carousel-control-prev" href="#text-carousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#text-carousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+<!-- currency.html -->
+
+<h1>Tipo de cambio</h1>
+  <p id="dolar" > </p>
+
+<script>
+  fetch("https://mindicador.cl/api")
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("dolar").textContent =
+      "El valor del dolar hoy es de $" + data.dolar.valor;
+    document.getElementById("euro").textContent =
+      "El valor del euro hoy es de $" + data.dolar.valor;
+  })
+  .catch((error) => console.log("Error al consumir la API!", error));
+</script>
+
+
+{% endblock contenido %}
+
+
+

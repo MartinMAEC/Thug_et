@@ -1,0 +1,81 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Cierra Navbar de la pagina -->
+    <!-- Comienza Container de Vinilos -->
+    <div class="container-md pt-2 mt-3">
+        <div class="row card-group mt-3 col-sm-12">
+            <div>
+                <h3>Todos los eventos</h3>
+                <br>
+            </div>
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/coronasunsets.jpg"%} alt="Card image" width="300" height="350">
+                <h4>Corona Sunsets World Chile
+                    <br>
+                    <h6>Playa Punta Piedra</h6>
+                    <h6>Sab. 08 abr.</h6>
+                </h4>
+                <a href="https://www.puntoticket.com/CoronaSunsets" target="_blank" class="btn btn-dark">Apuntate al
+                    evento</a>
+            </div>
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/coachella2023.jpg"%} alt="Card image" width="300" height="350">
+                <h4>Coachella 2023 (Weekend One)
+                    <br>
+                    <h6>Empire Polo Club</h6>
+                    <h6>Vie. 14 abr. ― Dom. 16 abr.</h6>
+                </h4>
+                <a href="https://www.coachella.com/passes" target="_blank" class="btn btn-dark">Apuntate al evento</a>
+            </div>
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/hwfestival.png"%} alt="Card image" width="300" height="350">
+                <h4>High Water Festival 2023
+                    <br>
+                    <h6>Riverfront Park</h6>
+                    <h6>Sab. 15 abr. ― Dom. 16 abr.</h6>
+                </h4>
+                <a href="https://www.highwaterfest.com/" target="_blank" class="btn btn-dark">Apuntate al evento</a>
+            </div>
+        </div>
+        <div class="row card-group mt-3 col-sm-12">
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/eventositw.jpg" %} alt="Card image">
+                <h4>Something in the water
+                    <br>
+                    <h6>Virginia Beach, Oceanfront</h6>
+                    <h6>Vie. 28 abr. ― Dom. 30 abr.</h6>
+                </h4>
+                <a href="https://somethinginthewater.com/passes" target="_blank" class="btn btn-dark">Reserva ahora</a>
+            </div>
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/pjglow2023.jpg" %} alt="Card image" width="300" height="350">
+                <h4>Project Glow 2023
+                    <br>
+                    <h6>Rfk Campus</h6>
+                    <h6>Sab. 29 abr. ― Dom. 30 abr.</h6>
+                </h4>
+                <a href="https://projectglow.frontgatetickets.com/?utm_source=ticketmaster&utm_source=1234554-Songkick&utm_medium=tm_website&utm_medium=affiliate&utm_campaign=websiteshell&utm_term=comp&utm_content=projectglow&irgwc=1&clickid=RuHUCQQOgxyNW-8QCjQSFwR7UkATTNQf-2%3ATQ00&camefrom=CFC_BUYAT_1234554&impradid=1234554&REFERRAL_ID=tmfeedbuyat1234554&wt.mc_id=aff_BUYAT_1234554&impradname=Songkick&ircid=4272"
+                    target="_blank" class="btn btn-dark">Reserva ahora</a>
+            </div>
+            <div class="card border-0" style="width:200px">
+                <img class="card-img-top" src={% static "app/img/gritalofest.png" %} alt="Card image" width="300" height="350">
+                <h4>Grítalo Fest 2023
+                    <br>
+                    <h6>Club Ambar</h6>
+                    <h6>Sab. 20 may</h6>
+                </h4>
+                <a href="https://www.eventrid.cl/eventos/bichosprod/gritalo-fest" target="_blank"
+                    class="btn btn-dark">Apuntate al evento</a>
+            </div>
+        </div>
+        <br>
+    </div>
+
+</body>
+
+</html>
+{% endblock contenido %}

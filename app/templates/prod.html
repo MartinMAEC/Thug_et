@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block contenido %} 
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-5">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{ product.imagen.url }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ product.imagen.url }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ product.imagen.url }}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <p class="newarrival text-center">{{ product.artista }}</p>
+            <h2>{{ product.nombreprod }}</h2>
+            <p class="price">${{ product.precio }}</p>
+            <p><b>{{ product.descripcion }}</b></p>
+            
+            <a href="{% url 'agregar_al_carrito' product.id %}"><button type="button" class="btn btn-primary">comprar</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

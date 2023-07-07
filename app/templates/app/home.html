@@ -1,0 +1,75 @@
+{% extends 'app/base.html' %}
+
+{%load static%}    
+
+{% block contenido %}
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <p id="tpm"></p>
+    </div>
+    <div class="carousel-item">
+      <p id="tasa_desempleo"></p>
+    </div>
+    <div class="carousel-item">
+      <p id="libra_cobre"></p>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/img/banner/banner1.jpg' %}" class="d-block w-100" alt="banner1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/img/banner/banner2.jpg' %}" class="d-block w-100" alt="banner2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/img/banner/banner3.jpg' %}" class="d-block w-100" alt="banner3">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% load humanize %}
+<div class="container">
+  <!-- Resto del código -->
+</div>
+
+<!-- Agrega los siguientes scripts al final del archivo justo antes de cerrar la etiqueta </body> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  var carousel = document.getElementById('carouselExample');
+  var carouselInstance = new bootstrap.Carousel(carousel, {
+    interval: 3000, // Establece el intervalo de tiempo en milisegundos para el carrusel
+    pause: true, // Configura si el carrusel debe pausarse al pasar el cursor por encima
+    wrap: true // Configura si el carrusel debe reiniciarse al llegar al final
+  });
+</script>
+
+<script>
+  fetch("https://mindicador.cl/api")
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("libra_cobre").textContent =
+      "El valor de la libra_cobre $" + data.libra_cobre.valor;
+    document.getElementById("tasa_desempleo").textContent =
+      "La tasa de desempleo es  $" + data.tasa_desempleo.valor;
+    document.getElementById("tpm").textContent =
+    "El valor del TPM es de $" + data.tpm.valor;
+  })
+  .catch((error) => console.log("Error al consumir la API!", error));
+</script>
+
+{% endblock%}

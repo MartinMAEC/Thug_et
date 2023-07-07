@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boleta de compra</title>
+    <!-- Aquí puedes incluir tus estilos CSS adicionales -->
+</head>
+<body>
+    <h1>Boleta de compra</h1>
+    <h2>Detalles de la compra:</h2>
+    <ul>
+        {% for producto in productos %}
+        <li>{{ producto.nombre }} - ${{ producto.precio }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Total: ${{ total }}</h3>
+    <!-- Aquí puedes agregar más elementos de la boleta, como información del cliente, etc. -->
+</body>
+</html>
+
+
+{% endblock contenido %}
