@@ -16,7 +16,6 @@ urlpatterns =[
     path('disminuir/<int:cart_item_id>/', disminuir, name='disminuir'),
     path('aumentar/<int:cart_item_id>/', aumentar, name='aumentar'),
     path('Hacer_compra', Hacer_compra, name='Hacer_compra'),
-    path('eventos',eventos, name='eventos'),
     path('verordenes', ver_ordeness, name='verordenes'),
     path('shop', shop_view, name='shop'),
     path('dash_admin', dash_admin, name='dash_admin'),

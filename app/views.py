@@ -184,9 +184,6 @@ def Hacer_compra(request):
 
     return redirect('home')
 @login_required
-def eventos(request):
-    return render(request, 'eventos.html')
-@login_required
 
 
 def ver_ordeness(request):
